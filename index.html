@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕷️ DREAMY THRIFT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a0a0a] text-white">
+
+    <section id="login-page" class="flex min-h-screen items-center justify-center p-6">
+        <div class="glass-login w-full max-w-md rounded-[2.5rem] border border-white/10 p-10 text-center shadow-2xl">
+            <h2 class="text-3xl font-black italic tracking-tighter mb-8">DREAMY LOGIN</h2>
+            <input type="text" id="username" placeholder="Username" class="mb-4 w-full rounded-full bg-white/5 border border-white/10 px-6 py-4 focus:outline-none focus:border-red-600 transition-all">
+            <input type="password" id="password" placeholder="Password (123)" class="mb-6 w-full rounded-full bg-white/5 border border-white/10 px-6 py-4 focus:outline-none focus:border-red-600 transition-all">
+            <button onclick="handleLogin()" class="w-full rounded-full bg-white py-4 font-black text-black hover:bg-red-600 hover:text-white transition-all uppercase tracking-widest">Enter Dashboard</button>
+            <p id="login-error" class="mt-4 text-xs text-red-500 hidden">Password salah! Coba angka 123.</p>
+        </div>
+    </section>
+
+    <section id="dashboard-page" class="hidden min-h-screen pb-20">
+        <nav class="fixed top-0 z-50 w-full p-4">
+            <div class="glass mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 px-6 py-3">
+                <h1 class="font-black italic">🕷️ DREAMY THRIFT</h1>
+                <button onclick="location.reload()" class="text-xs font-bold uppercase text-zinc-500">Logout</button>
+            </div>
+        </nav>
+
+        <header class="pt-32 pb-12 text-center">
+            <h2 class="text-6xl font-black uppercase italic tracking-tighter md:text-8xl">Stay <span class="text-zinc-600">Kalcer</span></h2>
+        </header>
+
+        <main class="mx-auto max-w-6xl px-6">
+            <div id="product-grid" class="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+                </div>
+        </main>
+
+        <div id="cartButton" class="fixed bottom-8 right-8 z-50 hidden">
+            <button onclick="toggleCart()" class="flex h-16 w-16 items-center justify-center rounded-full bg-yellow-400 text-black shadow-2xl border-4 border-black">
+                <i data-lucide="shopping-bag"></i>
+            </button>
+        </div>
+    </section>
+
+    <div id="cartModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center bg-black/90 p-4 backdrop-blur-md">
+        <div class="glass w-full max-w-md rounded-[2.5rem] border border-white/10 p-8">
+            <h3 class="mb-6 text-2xl font-black italic">YOUR BAG 🕸️</h3>
+            <div id="cartItems" class="mb-6 max-h-60 overflow-y-auto space-y-3"></div>
+            <div class="mb-8 border-t border-white/10 pt-4 flex justify-between font-bold">
+                <span>Total:</span>
+                <span id="totalPrice" class="text-red-500">Rp 0</span>
+            </div>
+            <button onclick="checkoutWA()" class="w-full rounded-2xl bg-[#25D366] py-4 font-black text-black">CHECKOUT KE WA</button>
+            <button onclick="toggleCart()" class="mt-4 w-full text-xs text-zinc-500">Tutup</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
