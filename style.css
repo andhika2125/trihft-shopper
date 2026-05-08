@@ -1,0 +1,6 @@
+body { font-family: 'Plus Jakarta Sans', sans-serif; }
+.glass-login { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); }
+.glass { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); }
+.spider-web { position: absolute; pointer-events: none; opacity: 0.1; }
+#product-grid img { transition: transform 0.5s ease; }
+#product-grid div:hover img { transform: scale(1.1); }
